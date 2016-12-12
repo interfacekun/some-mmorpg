@@ -22,7 +22,7 @@ if not user.name then
 		local name = ""
 		math.randomseed (os.time ())
 		for i = 1, 16 do
-			name = name .. string.char (math.random (127))
+			name = name
 		end
 
 		user.name = name

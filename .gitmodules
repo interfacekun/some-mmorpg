@@ -8,5 +8,5 @@
 	branch = 2.8
 [submodule "3rd/openssl"]
 	path = 3rd/openssl
-	url = git@github.com:openssl/openssl.git
+	url = https://github.com/openssl/openssl.git
 	branch = 1.0.2-aead

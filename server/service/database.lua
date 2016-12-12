@@ -30,7 +30,7 @@ function connection_handler (key)
 	else
 		hash = hash_num (assert (tonumber (key)))
 	end
-
+	print("hash % ngroup + 1", hash % ngroup + 1)
 	return group[hash % ngroup + 1]
 end
 
@@ -48,8 +48,14 @@ skynet.start (function ()
 	module_init ("character", character)
 
 	center = redis.connect (config.center)
+	for _,v in pairs(config.center) do
+		skynet.error(v)
+	end
 	ngroup = #config.group
 	for _, c in ipairs (config.group) do
+		for _,v in pairs(c) do
+			skynet.error(v)
+		end
 		table.insert (group, redis.connect (c))
 	end
 

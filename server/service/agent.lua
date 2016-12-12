@@ -143,7 +143,8 @@ function CMD.open (fd, account)
 	REQUEST = user.REQUEST
 	RESPONSE = user.RESPONSE
 	
-	character_handler:register (user)
+	local test = character_handler:register (user)
+	print(type(test))
 
 	last_heartbeat_time = skynet.now ()
 	heartbeat_check ()

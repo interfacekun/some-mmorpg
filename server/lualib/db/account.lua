@@ -19,7 +19,9 @@ function account.load (name)
 	local acc = { name = name }
 
 	local connection, key = make_key (name)
+	print(key)
 	if connection:exists (key) then
+		print("account_key exists")
 		acc.id = connection:hget (key, "account")
 		acc.salt = connection:hget (key, "salt")
 		acc.verifier = connection:hget (key, "verifier")
